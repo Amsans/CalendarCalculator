@@ -1,4 +1,8 @@
-﻿namespace CalendarCalculator
+﻿using CalendarCalculator.Properties;
+using System;
+using System.Windows.Forms;
+
+namespace CalendarCalculator
 {
     partial class Form1
     {
@@ -46,10 +50,18 @@
             this.heliadaUpDown = new System.Windows.Forms.NumericUpDown();
             this.HeliadaDatePicker = new System.Windows.Forms.DateTimePicker();
             this.FormTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.propertiesStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autostartStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minimizedStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eosforcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabControl.SuspendLayout();
             this.converterTab.SuspendLayout();
             this.heliadaTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.heliadaUpDown)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DatePicker
@@ -122,11 +134,11 @@
             // 
             this.TabControl.Controls.Add(this.converterTab);
             this.TabControl.Controls.Add(this.heliadaTab);
-            this.TabControl.Location = new System.Drawing.Point(2, 11);
+            this.TabControl.Location = new System.Drawing.Point(2, 41);
             this.TabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(470, 289);
+            this.TabControl.Size = new System.Drawing.Size(470, 261);
             this.TabControl.TabIndex = 7;
             // 
             // converterTab
@@ -141,7 +153,7 @@
             this.converterTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.converterTab.Name = "converterTab";
             this.converterTab.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.converterTab.Size = new System.Drawing.Size(462, 256);
+            this.converterTab.Size = new System.Drawing.Size(462, 228);
             this.converterTab.TabIndex = 0;
             this.converterTab.Text = "Конвертер";
             // 
@@ -157,7 +169,7 @@
             this.heliadaTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.heliadaTab.Name = "heliadaTab";
             this.heliadaTab.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.heliadaTab.Size = new System.Drawing.Size(462, 256);
+            this.heliadaTab.Size = new System.Drawing.Size(462, 228);
             this.heliadaTab.TabIndex = 1;
             this.heliadaTab.Text = "Хелиады";
             // 
@@ -224,7 +236,7 @@
             0,
             0,
             0});
-            this.heliadaUpDown.ValueChanged += new System.EventHandler(this.heliadaUpDown_ValueChanged);
+            this.heliadaUpDown.ValueChanged += new System.EventHandler(this.HeliadaUpDown_ValueChanged);
             // 
             // HeliadaDatePicker
             // 
@@ -236,23 +248,85 @@
             this.HeliadaDatePicker.Size = new System.Drawing.Size(148, 26);
             this.HeliadaDatePicker.TabIndex = 0;
             this.HeliadaDatePicker.Value = new System.DateTime(2029, 12, 25, 23, 59, 59, 0);
-            this.HeliadaDatePicker.ValueChanged += new System.EventHandler(this.heliadaDatePicker_ValueChanged);
+            this.HeliadaDatePicker.ValueChanged += new System.EventHandler(this.HeliadaDatePicker_ValueChanged);
             // 
             // FormTooltip
             // 
             this.FormTooltip.ToolTipTitle = "Подсказка";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.propertiesStripMenuItem,
+            this.helpStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(474, 33);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // propertiesStripMenuItem
+            // 
+            this.propertiesStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autostartStripMenuItem,
+            this.minimizedStripMenuItem,
+            this.exitStripMenuItem});
+            this.propertiesStripMenuItem.Name = "propertiesStripMenuItem";
+            this.propertiesStripMenuItem.Size = new System.Drawing.Size(116, 29);
+            this.propertiesStripMenuItem.Text = "Настройки";
+            // 
+            // autostartStripMenuItem
+            // 
+            this.autostartStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.autostartStripMenuItem.Name = "autostartStripMenuItem";
+            this.autostartStripMenuItem.Size = new System.Drawing.Size(289, 34);
+            this.autostartStripMenuItem.Text = "Автозапуск";
+            // 
+            // minimizedStripMenuItem
+            // 
+            this.minimizedStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.minimizedStripMenuItem.Name = "minimizedStripMenuItem";
+            this.minimizedStripMenuItem.Size = new System.Drawing.Size(289, 34);
+            this.minimizedStripMenuItem.Text = "Запускать свёрнутым";
+            // 
+            // exitStripMenuItem
+            // 
+            this.exitStripMenuItem.Name = "exitStripMenuItem";
+            this.exitStripMenuItem.Size = new System.Drawing.Size(289, 34);
+            this.exitStripMenuItem.Text = "Выход";
+            // 
+            // helpStripMenuItem
+            // 
+            this.helpStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eosforcomToolStripMenuItem});
+            this.helpStripMenuItem.Name = "helpStripMenuItem";
+            this.helpStripMenuItem.Size = new System.Drawing.Size(100, 29);
+            this.helpStripMenuItem.Text = "Помощь";
+            // 
+            // eosforcomToolStripMenuItem
+            // 
+            this.eosforcomToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eosforcomToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.eosforcomToolStripMenuItem.Name = "eosforcomToolStripMenuItem";
+            this.eosforcomToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
+            this.eosforcomToolStripMenuItem.Text = "eosfor.com";
+            this.eosforcomToolStripMenuItem.Click += new System.EventHandler(this.eosforcomToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AcceptButton = this.ToCommonButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 298);
+            this.ClientSize = new System.Drawing.Size(474, 300);
             this.Controls.Add(this.TabControl);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "Конвертер дат УЕХ";
+            this.Text = "Конвертер дат УЕХ 1.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.TabControl.ResumeLayout(false);
@@ -261,9 +335,13 @@
             this.heliadaTab.ResumeLayout(false);
             this.heliadaTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.heliadaUpDown)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
+
 
         #endregion
         private System.Windows.Forms.DateTimePicker DatePicker;
@@ -282,6 +360,13 @@
         private System.Windows.Forms.DateTimePicker HeliadaDatePicker;
         private System.Windows.Forms.ToolTip FormTooltip;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem propertiesStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autostartStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem minimizedStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eosforcomToolStripMenuItem;
     }
 }
 
