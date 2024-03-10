@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
 using System.Resources;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -32,6 +31,7 @@ namespace CalendarCalculator
         private void InitializeForm()
         {
             InitializeComponent();
+
             DateTime today = DateTime.Now;
             DatePicker.Value = today;
             HeliadaDatePicker.Value = today;
@@ -171,74 +171,6 @@ namespace CalendarCalculator
             eosforcomToolStripMenuItem.MouseLeave += LinkMouseLeave;
         }
 
-        private void InitLabels()
-        {
-            CultureInfo ci = CultureInfo.GetCultureInfo(GetAppLanguage());
-            
-            this.Text = RM.GetString("form_title", ci) + " " + Settings.Default["version"];
-            propertiesStripMenuItem.Text = RM.GetString("settings", ci);
-            autostartStripMenuItem.Text = RM.GetString("autorun", ci);
-            minimizedStripMenuItem.Text = RM.GetString("minimized", ci);
-            languageStripMenuItem.Text = RM.GetString("language", ci);
-            exitStripMenuItem.Text = RM.GetString("exit", ci);
-            helpStripMenuItem.Text = RM.GetString("help", ci);
-            tutInputValidation.Text = RM.GetString("invalid_format", ci);
-            tabControl.TabPages[0].Text = RM.GetString("converter", ci);
-            tabControl.TabPages[1].Text = RM.GetString("heliadas", ci);
-            heliadaLabel.Text = RM.GetString("heliada_tab_info", ci);
-            ToolTip tooltip = new ToolTip
-            {
-                IsBalloon = false,
-                ToolTipTitle = RM.GetString("tooltip_title", ci)
-            };
-            tooltip.SetToolTip(tutInputValidation, RM.GetString("tooltip_tut_input", ci));
-            tooltip.SetToolTip(tutFormatLabel, RM.GetString("tooltip_tut_label", ci));
-            tooltip.SetToolTip(commonFormatLabel, RM.GetString("tooltip_tut_label", ci));
-            tooltip.SetToolTip(heliadsInCommon, RM.GetString("tooltip_tut_label", ci));
-            tooltip.SetToolTip(heliadsInTut, RM.GetString("tooltip_tut_label", ci));
-        }
-
-        private void InitializeLanguageMenu()
-        {
-            string app_language = GetAppLanguage();
-            foreach (var lang in new List<string>()
-            {
-                "en",
-                "be",
-                "ru"
-            })
-            {
-                ToolStripMenuItem menuItem = new ToolStripMenuItem(RM.GetString("lang_" + lang), null, Language_Click)
-                {
-                    ImageScaling = ToolStripItemImageScaling.None,
-                    Tag = lang,
-                    Checked = app_language.Equals(lang)
-                };
-                languageStripMenuItem.DropDownItems.Add(menuItem);
-            }
-        }
-
-        void Language_Click(object sender, EventArgs e)
-        {
-            if (sender is ToolStripMenuItem currentItem)
-            {
-                ((ToolStripMenuItem)currentItem.OwnerItem).DropDownItems
-                    .OfType<ToolStripMenuItem>().ToList()
-                    .ForEach(item =>
-                    {
-                        item.Checked = false;
-                    });
-
-                currentItem.Checked = true;
-                string language = (string)currentItem.Tag;
-                System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(language);
-                SetAppLanguage(language);
-
-                this.Controls.Clear();
-                InitializeForm();
-            }
-        }
-
         private void ShowForm_Click(object sender, EventArgs e)
         {
             this.Show();
@@ -301,7 +233,7 @@ namespace CalendarCalculator
             Process.Start("http://www.eosfor.com");
         }
 
-        private void LinkMouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void LinkMouseMove(object sender, MouseEventArgs e)
         {
             this.Cursor = Cursors.Hand;
         }
@@ -318,6 +250,74 @@ namespace CalendarCalculator
         {
             Settings.Default["Language"] = language;
             Settings.Default.Save();
+        }
+
+        private void InitLabels()
+        {
+            CultureInfo ci = CultureInfo.GetCultureInfo(GetAppLanguage());
+
+            this.Text = RM.GetString("form_title", ci) + " " + Settings.Default["version"];
+            propertiesStripMenuItem.Text = RM.GetString("settings", ci);
+            autostartStripMenuItem.Text = RM.GetString("autorun", ci);
+            minimizedStripMenuItem.Text = RM.GetString("minimized", ci);
+            languageStripMenuItem.Text = RM.GetString("language", ci);
+            exitStripMenuItem.Text = RM.GetString("exit", ci);
+            helpStripMenuItem.Text = RM.GetString("help", ci);
+            tutInputValidation.Text = RM.GetString("invalid_format", ci);
+            tabControl.TabPages[0].Text = RM.GetString("converter", ci);
+            tabControl.TabPages[1].Text = RM.GetString("heliadas", ci);
+            heliadaLabel.Text = RM.GetString("heliada_tab_info", ci);
+            ToolTip tooltip = new ToolTip
+            {
+                IsBalloon = false,
+                ToolTipTitle = RM.GetString("tooltip_title", ci)
+            };
+            tooltip.SetToolTip(tutInputValidation, RM.GetString("tooltip_tut_input", ci));
+            tooltip.SetToolTip(tutFormatLabel, RM.GetString("tooltip_tut_label", ci));
+            tooltip.SetToolTip(commonFormatLabel, RM.GetString("tooltip_tut_label", ci));
+            tooltip.SetToolTip(heliadsInCommon, RM.GetString("tooltip_tut_label", ci));
+            tooltip.SetToolTip(heliadsInTut, RM.GetString("tooltip_tut_label", ci));
+        }
+
+        private void InitializeLanguageMenu()
+        {
+            string appLanguage = GetAppLanguage();
+            foreach (var lang in new List<string>()
+            {
+                "en",
+                "be",
+                "ru"
+            })
+            {
+                ToolStripMenuItem menuItem = new ToolStripMenuItem(RM.GetString("lang_" + lang), null, Language_Click)
+                {
+                    ImageScaling = ToolStripItemImageScaling.None,
+                    Tag = lang,
+                    Checked = appLanguage.Equals(lang)
+                };
+                languageStripMenuItem.DropDownItems.Add(menuItem);
+            }
+        }
+
+        void Language_Click(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem currentItem)
+            {
+                ((ToolStripMenuItem)currentItem.OwnerItem).DropDownItems
+                    .OfType<ToolStripMenuItem>().ToList()
+                    .ForEach(item =>
+                    {
+                        item.Checked = false;
+                    });
+
+                currentItem.Checked = true;
+                string language = (string)currentItem.Tag;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(language);
+                SetAppLanguage(language);
+
+                this.Controls.Clear();
+                InitializeForm();
+            }
         }
     }
 }
