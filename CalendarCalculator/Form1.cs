@@ -1,7 +1,13 @@
 ﻿using CalendarCalculator.Properties;
 using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Resources;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -11,6 +17,7 @@ namespace CalendarCalculator
     {
         // The path to the key where Windows looks for startup applications
         private readonly RegistryKey rkAutostartApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+        private readonly ResourceManager RM = new ResourceManager("CalendarCalculator.WinFormStrings", Assembly.GetExecutingAssembly());
 
         private readonly DateConverterService converterService = new DateConverterService();
 
@@ -19,42 +26,47 @@ namespace CalendarCalculator
         private MenuItem minimizedOption;
         public Form1()
         {
+            InitializeForm();
+        }
+
+        private void InitializeForm()
+        {
             InitializeComponent();
             DateTime today = DateTime.Now;
             DatePicker.Value = today;
             HeliadaDatePicker.Value = today;
             string tutToday = converterService.ConvertToTUT(today);
-            TutFormatLabel.Text = tutToday;
+            tutFormatLabel.Text = tutToday;
 
             TutFormatInput.Text = tutToday;
-            CommonFormatLabel.Text = converterService.ConvertToCommon(tutToday);
+            commonFormatLabel.Text = converterService.ConvertToCommon(tutToday);
 
             InitializeMenus(tutToday);
         }
+
         private void DatePicker_ValueChanged(object sender, EventArgs e)
         {
             DateTime commonDate = DatePicker.Value;
-            TutFormatLabel.Text = converterService.ConvertToTUT(commonDate);
+            tutFormatLabel.Text = converterService.ConvertToTUT(commonDate);
         }
 
         private void ConvertToCommon()
         {
             string tutDate = TutFormatInput.Text;
-            CommonFormatLabel.Text = converterService.ConvertToCommon(tutDate);
+            commonFormatLabel.Text = converterService.ConvertToCommon(tutDate);
         }
 
         private void ToCommonButton_Click(object sender, EventArgs e)
         {
-            TutInputValidation.Visible = false;
+            tutInputValidation.Visible = false;
             if (ValidateTutInput())
             {
                 ConvertToCommon();
             }
             else
             {
-                TutInputValidation.Visible = true;
+                tutInputValidation.Visible = true;
             }
-
         }
 
         private bool ValidateTutInput()
@@ -113,31 +125,42 @@ namespace CalendarCalculator
         /// <param name="tutToday">Today's date in TUT format</param>
         private void InitializeMenus(string tutToday)
         {
+            InitLabels();
+            InitializeLanguageMenu();
+
+            CultureInfo ci = CultureInfo.GetCultureInfo(GetAppLanguage());
             bool autostartChecked = rkAutostartApp.GetValue("CalendarCalculator") != null;
-            autostartOption = new MenuItem("Автозапуск", Autostart_Click)
+            autostartOption = new MenuItem(RM.GetString("autorun", ci), Autostart_Click)
             {
-                Checked = autostartChecked
+                Checked = autostartChecked,
             };
             this.autostartStripMenuItem.Checked = autostartChecked;
+            this.autostartStripMenuItem.Click += Autostart_Click;
 
             bool minimizedChecked = (bool)Settings.Default["Minimized"];
-            minimizedOption = new MenuItem("Запускать свёрнутым", Minimized_Click)
+            minimizedOption = new MenuItem(RM.GetString("minimized", ci), Minimized_Click)
             {
                 Checked = minimizedChecked
             };
             this.minimizedStripMenuItem.Checked = minimizedChecked;
+            this.minimizedStripMenuItem.Click += Minimized_Click;
 
-            MenuItem options = new MenuItem("Настройки");
+            MenuItem options = new MenuItem(RM.GetString("settings", ci));
             options.MenuItems.Add(autostartOption);
             options.MenuItems.Add(minimizedOption);
 
+
+            if (trayIcon != null)
+            {
+                trayIcon.Dispose();
+            }
             trayIcon = new NotifyIcon
             {
                 Icon = Resources.Icon,
                 ContextMenu = new ContextMenu(new MenuItem[] {
-                    new MenuItem("Открыть", ShowForm_Click),
+                    new MenuItem(RM.GetString("open", ci), ShowForm_Click),
                     options,
-                    new MenuItem("Выход", Exit_Click)
+                    new MenuItem(RM.GetString("exit", ci), Exit_Click)
                 }),
                 Visible = true,
                 Text = tutToday,
@@ -146,6 +169,74 @@ namespace CalendarCalculator
 
             eosforcomToolStripMenuItem.MouseMove += LinkMouseMove;
             eosforcomToolStripMenuItem.MouseLeave += LinkMouseLeave;
+        }
+
+        private void InitLabels()
+        {
+            CultureInfo ci = CultureInfo.GetCultureInfo(GetAppLanguage());
+            
+            this.Text = RM.GetString("form_title", ci) + " " + Settings.Default["version"];
+            propertiesStripMenuItem.Text = RM.GetString("settings", ci);
+            autostartStripMenuItem.Text = RM.GetString("autorun", ci);
+            minimizedStripMenuItem.Text = RM.GetString("minimized", ci);
+            languageStripMenuItem.Text = RM.GetString("language", ci);
+            exitStripMenuItem.Text = RM.GetString("exit", ci);
+            helpStripMenuItem.Text = RM.GetString("help", ci);
+            tutInputValidation.Text = RM.GetString("invalid_format", ci);
+            tabControl.TabPages[0].Text = RM.GetString("converter", ci);
+            tabControl.TabPages[1].Text = RM.GetString("heliadas", ci);
+            heliadaLabel.Text = RM.GetString("heliada_tab_info", ci);
+            ToolTip tooltip = new ToolTip
+            {
+                IsBalloon = false,
+                ToolTipTitle = RM.GetString("tooltip_title", ci)
+            };
+            tooltip.SetToolTip(tutInputValidation, RM.GetString("tooltip_tut_input", ci));
+            tooltip.SetToolTip(tutFormatLabel, RM.GetString("tooltip_tut_label", ci));
+            tooltip.SetToolTip(commonFormatLabel, RM.GetString("tooltip_tut_label", ci));
+            tooltip.SetToolTip(heliadsInCommon, RM.GetString("tooltip_tut_label", ci));
+            tooltip.SetToolTip(heliadsInTut, RM.GetString("tooltip_tut_label", ci));
+        }
+
+        private void InitializeLanguageMenu()
+        {
+            string app_language = GetAppLanguage();
+            foreach (var lang in new List<string>()
+            {
+                "en",
+                "be",
+                "ru"
+            })
+            {
+                ToolStripMenuItem menuItem = new ToolStripMenuItem(RM.GetString("lang_" + lang), null, Language_Click)
+                {
+                    ImageScaling = ToolStripItemImageScaling.None,
+                    Tag = lang,
+                    Checked = app_language.Equals(lang)
+                };
+                languageStripMenuItem.DropDownItems.Add(menuItem);
+            }
+        }
+
+        void Language_Click(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem currentItem)
+            {
+                ((ToolStripMenuItem)currentItem.OwnerItem).DropDownItems
+                    .OfType<ToolStripMenuItem>().ToList()
+                    .ForEach(item =>
+                    {
+                        item.Checked = false;
+                    });
+
+                currentItem.Checked = true;
+                string language = (string)currentItem.Tag;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(language);
+                SetAppLanguage(language);
+
+                this.Controls.Clear();
+                InitializeForm();
+            }
         }
 
         private void ShowForm_Click(object sender, EventArgs e)
@@ -218,6 +309,15 @@ namespace CalendarCalculator
         private void LinkMouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
+        }
+        private static string GetAppLanguage()
+        {
+            return (string)Settings.Default["Language"];
+        }
+        private static void SetAppLanguage(string language)
+        {
+            Settings.Default["Language"] = language;
+            Settings.Default.Save();
         }
     }
 }

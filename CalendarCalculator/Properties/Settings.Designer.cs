@@ -34,5 +34,26 @@ namespace CalendarCalculator.Properties {
                 this["Minimized"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("v1.2")]
+        public string Version {
+            get {
+                return ((string)(this["Version"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ru")]
+        public string Language {
+            get {
+                return ((string)(this["Language"]));
+            }
+            set {
+                this["Language"] = value;
+            }
+        }
     }
 }

@@ -117,13 +117,618 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="FormTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="DatePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 48</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DatePicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="DatePicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 26</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DatePicker.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;DatePicker.Name" xml:space="preserve">
+    <value>DatePicker</value>
+  </data>
+  <data name="&gt;&gt;DatePicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DatePicker.Parent" xml:space="preserve">
+    <value>converterTab</value>
+  </data>
+  <data name="&gt;&gt;DatePicker.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ToCommonButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 128</value>
+  </data>
+  <data name="ToCommonButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="ToCommonButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 31</value>
+  </data>
+  <data name="ToCommonButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ToCommonButton.Text" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="&gt;&gt;ToCommonButton.Name" xml:space="preserve">
+    <value>ToCommonButton</value>
+  </data>
+  <data name="&gt;&gt;ToCommonButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToCommonButton.Parent" xml:space="preserve">
+    <value>converterTab</value>
+  </data>
+  <data name="&gt;&gt;ToCommonButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="commonFormatLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="commonFormatLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 132</value>
+  </data>
+  <data name="commonFormatLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="commonFormatLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="commonFormatLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="commonFormatLabel.Text" xml:space="preserve">
+    <value>commonFormatLabel</value>
+  </data>
+  <data name="&gt;&gt;commonFormatLabel.Name" xml:space="preserve">
+    <value>commonFormatLabel</value>
+  </data>
+  <data name="&gt;&gt;commonFormatLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;commonFormatLabel.Parent" xml:space="preserve">
+    <value>converterTab</value>
+  </data>
+  <data name="&gt;&gt;commonFormatLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="TutFormatInput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 128</value>
+  </data>
+  <data name="TutFormatInput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="TutFormatInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 26</value>
+  </data>
+  <data name="TutFormatInput.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;TutFormatInput.Name" xml:space="preserve">
+    <value>TutFormatInput</value>
+  </data>
+  <data name="&gt;&gt;TutFormatInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TutFormatInput.Parent" xml:space="preserve">
+    <value>converterTab</value>
+  </data>
+  <data name="&gt;&gt;TutFormatInput.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tutFormatLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tutFormatLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 57</value>
+  </data>
+  <data name="tutFormatLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="tutFormatLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 20</value>
+  </data>
+  <data name="tutFormatLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tutFormatLabel.Text" xml:space="preserve">
+    <value>tutFormatLabel</value>
+  </data>
+  <data name="&gt;&gt;tutFormatLabel.Name" xml:space="preserve">
+    <value>tutFormatLabel</value>
+  </data>
+  <data name="&gt;&gt;tutFormatLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tutFormatLabel.Parent" xml:space="preserve">
+    <value>converterTab</value>
+  </data>
+  <data name="&gt;&gt;tutFormatLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tutInputValidation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tutInputValidation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 163</value>
+  </data>
+  <data name="tutInputValidation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="tutInputValidation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 20</value>
+  </data>
+  <data name="tutInputValidation.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tutInputValidation.Text" xml:space="preserve">
+    <value>Неверный формат</value>
+  </data>
+  <data name="tutInputValidation.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;tutInputValidation.Name" xml:space="preserve">
+    <value>tutInputValidation</value>
+  </data>
+  <data name="&gt;&gt;tutInputValidation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tutInputValidation.Parent" xml:space="preserve">
+    <value>converterTab</value>
+  </data>
+  <data name="&gt;&gt;tutInputValidation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;converterTab.Name" xml:space="preserve">
+    <value>converterTab</value>
+  </data>
+  <data name="&gt;&gt;converterTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;converterTab.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;converterTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;heliadaTab.Name" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;heliadaTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;heliadaTab.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;heliadaTab.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 41</value>
+  </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 261</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="converterTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="converterTab.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="converterTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="converterTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 228</value>
+  </data>
+  <data name="converterTab.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="converterTab.Text" xml:space="preserve">
+    <value>Конвертер</value>
+  </data>
+  <data name="&gt;&gt;converterTab.Name" xml:space="preserve">
+    <value>converterTab</value>
+  </data>
+  <data name="&gt;&gt;converterTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;converterTab.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;converterTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;heliadaLabel.Name" xml:space="preserve">
+    <value>heliadaLabel</value>
+  </data>
+  <data name="&gt;&gt;heliadaLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;heliadaLabel.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;heliadaLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;heliadsInTut.Name" xml:space="preserve">
+    <value>heliadsInTut</value>
+  </data>
+  <data name="&gt;&gt;heliadsInTut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;heliadsInTut.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;heliadsInTut.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;heliadsInCommon.Name" xml:space="preserve">
+    <value>heliadsInCommon</value>
+  </data>
+  <data name="&gt;&gt;heliadsInCommon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;heliadsInCommon.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;heliadsInCommon.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;plusLabel.Name" xml:space="preserve">
+    <value>plusLabel</value>
+  </data>
+  <data name="&gt;&gt;plusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;plusLabel.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;plusLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;heliadaUpDown.Name" xml:space="preserve">
+    <value>heliadaUpDown</value>
+  </data>
+  <data name="&gt;&gt;heliadaUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;heliadaUpDown.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;heliadaUpDown.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;HeliadaDatePicker.Name" xml:space="preserve">
+    <value>HeliadaDatePicker</value>
+  </data>
+  <data name="&gt;&gt;HeliadaDatePicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HeliadaDatePicker.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;HeliadaDatePicker.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="heliadaTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="heliadaTab.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="heliadaTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="heliadaTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 228</value>
+  </data>
+  <data name="heliadaTab.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="heliadaTab.Text" xml:space="preserve">
+    <value>Хелиады</value>
+  </data>
+  <data name="&gt;&gt;heliadaTab.Name" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;heliadaTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;heliadaTab.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;heliadaTab.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="heliadaLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="heliadaLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 42</value>
+  </data>
+  <data name="heliadaLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="heliadaLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 20</value>
+  </data>
+  <data name="heliadaLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="heliadaLabel.Text" xml:space="preserve">
+    <value>Подсчёт N-ой хелиады (1000 дней) для указанной даты</value>
+  </data>
+  <data name="&gt;&gt;heliadaLabel.Name" xml:space="preserve">
+    <value>heliadaLabel</value>
+  </data>
+  <data name="&gt;&gt;heliadaLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;heliadaLabel.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;heliadaLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="heliadsInTut.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="heliadsInTut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 132</value>
+  </data>
+  <data name="heliadsInTut.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="heliadsInTut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="heliadsInTut.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="heliadsInTut.Text" xml:space="preserve">
+    <value>heliadsInTut</value>
+  </data>
+  <data name="&gt;&gt;heliadsInTut.Name" xml:space="preserve">
+    <value>heliadsInTut</value>
+  </data>
+  <data name="&gt;&gt;heliadsInTut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;heliadsInTut.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;heliadsInTut.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="heliadsInCommon.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="heliadsInCommon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>298, 94</value>
+  </data>
+  <data name="heliadsInCommon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="heliadsInCommon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 20</value>
+  </data>
+  <data name="heliadsInCommon.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="heliadsInCommon.Text" xml:space="preserve">
+    <value>heliadsInCommon</value>
+  </data>
+  <data name="&gt;&gt;heliadsInCommon.Name" xml:space="preserve">
+    <value>heliadsInCommon</value>
+  </data>
+  <data name="&gt;&gt;heliadsInCommon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;heliadsInCommon.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;heliadsInCommon.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="plusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="plusLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 94</value>
+  </data>
+  <data name="plusLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="plusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 20</value>
+  </data>
+  <data name="plusLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="plusLabel.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="&gt;&gt;plusLabel.Name" xml:space="preserve">
+    <value>plusLabel</value>
+  </data>
+  <data name="&gt;&gt;plusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;plusLabel.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;plusLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="heliadaUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 89</value>
+  </data>
+  <data name="heliadaUpDown.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="heliadaUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 26</value>
+  </data>
+  <data name="heliadaUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="heliadaUpDown.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;heliadaUpDown.Name" xml:space="preserve">
+    <value>heliadaUpDown</value>
+  </data>
+  <data name="&gt;&gt;heliadaUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;heliadaUpDown.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;heliadaUpDown.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="HeliadaDatePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 89</value>
+  </data>
+  <data name="HeliadaDatePicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="HeliadaDatePicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 26</value>
+  </data>
+  <data name="HeliadaDatePicker.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;HeliadaDatePicker.Name" xml:space="preserve">
+    <value>HeliadaDatePicker</value>
+  </data>
+  <data name="&gt;&gt;HeliadaDatePicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HeliadaDatePicker.Parent" xml:space="preserve">
+    <value>heliadaTab</value>
+  </data>
+  <data name="&gt;&gt;HeliadaDatePicker.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="formTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>180, 17</value>
+    <value>177, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="languageStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 34</value>
+  </data>
+  <data name="languageStripMenuItem.Text" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="autostartStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="autostartStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 34</value>
+  </data>
+  <data name="autostartStripMenuItem.Text" xml:space="preserve">
+    <value>Автозапуск</value>
+  </data>
+  <data name="minimizedStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="minimizedStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 34</value>
+  </data>
+  <data name="minimizedStripMenuItem.Text" xml:space="preserve">
+    <value>Запускать свёрнутым</value>
+  </data>
+  <data name="exitStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 34</value>
+  </data>
+  <data name="exitStripMenuItem.Text" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="propertiesStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 29</value>
+  </data>
+  <data name="propertiesStripMenuItem.Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="helpStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 29</value>
+  </data>
+  <data name="helpStripMenuItem.Text" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>474, 33</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="eosforcomToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Underline</value>
+  </data>
+  <data name="eosforcomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 34</value>
+  </data>
+  <data name="eosforcomToolStripMenuItem.Text" xml:space="preserve">
+    <value>eosfor.com</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>474, 300</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAMDAAAAEAIAAPGAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAwAAAAMAgGAAAAVwL5hwAAAAFz
@@ -231,5 +836,65 @@
         d0+RNXJmFY/SROA5EpSuKSJ55uahvKOgG8TC3Al5YSSeUAk/tR9Q+D+VDaUvw7Tl8AAAAABJRU5ErkJg
         gg==
 </value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Конвертер дат УЕХ</value>
+  </data>
+  <data name="&gt;&gt;formTooltip.Name" xml:space="preserve">
+    <value>formTooltip</value>
+  </data>
+  <data name="&gt;&gt;formTooltip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;propertiesStripMenuItem.Name" xml:space="preserve">
+    <value>propertiesStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;propertiesStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;autostartStripMenuItem.Name" xml:space="preserve">
+    <value>autostartStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;autostartStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;minimizedStripMenuItem.Name" xml:space="preserve">
+    <value>minimizedStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;minimizedStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;languageStripMenuItem.Name" xml:space="preserve">
+    <value>languageStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;languageStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exitStripMenuItem.Name" xml:space="preserve">
+    <value>exitStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exitStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpStripMenuItem.Name" xml:space="preserve">
+    <value>helpStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;helpStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eosforcomToolStripMenuItem.Name" xml:space="preserve">
+    <value>eosforcomToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;eosforcomToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
