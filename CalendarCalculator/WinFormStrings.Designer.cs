@@ -79,6 +79,15 @@ namespace CalendarCalculator {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to День.
+        /// </summary>
+        internal static string day {
+            get {
+                return ResourceManager.GetString("day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Выход.
         /// </summary>
         internal static string exit {

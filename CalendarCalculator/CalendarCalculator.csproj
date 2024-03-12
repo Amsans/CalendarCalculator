@@ -64,6 +64,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TrayInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrayInfoForm.Designer.cs">
+      <DependentUpon>TrayInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinFormStrings.be.Designer.cs">
       <DependentUpon>WinFormStrings.be.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -75,6 +81,9 @@
       <DependentUpon>WinFormStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="RomanNumber.cs" />
+    <EmbeddedResource Include="TrayInfoForm.resx">
+      <DependentUpon>TrayInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinFormStrings.be.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>WinFormStrings.be.Designer.cs</LastGenOutput>

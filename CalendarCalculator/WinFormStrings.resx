@@ -123,6 +123,9 @@
   <data name="converter" xml:space="preserve">
     <value>Конвертер</value>
   </data>
+  <data name="day" xml:space="preserve">
+    <value>День</value>
+  </data>
   <data name="exit" xml:space="preserve">
     <value>Выход</value>
   </data>

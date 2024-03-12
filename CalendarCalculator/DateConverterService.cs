@@ -63,6 +63,21 @@ namespace CalendarCalculator
 
         public string ConvertToCommon(string tutFormatString)
         {
+            long days = GetNumberOfDays(tutFormatString);
+            DateTime dateInCommonFormat = BASE_DATE.AddDays(days - 1);
+            return dateInCommonFormat.ToString(DATE_PATTERN);
+        }
+
+        public long GetNumberOfDays(string tutFormatString)
+        {
+            long parsedDigits = ParseDigits(tutFormatString);
+            long days =  parsedDigits - CALENDAR_BASIS;
+            Console.Out.WriteLine("Days " + days);
+            return days;
+        }
+
+        private static long ParseDigits(string tutFormatString)
+        {
             Regex regex = new Regex(TUT_FORMAT_REGEXP, RegexOptions.None);
             Match matcher = regex.Match(tutFormatString);
             string digits = "";
@@ -95,13 +110,8 @@ namespace CalendarCalculator
 
                 digits = String.Format("{0}{1}{2}{3}", heliada, gekatontada, decada, dayOfDecada);
             }
-            long parsedDigits = long.Parse(digits);
-            Console.Out.WriteLine("Parsed " + parsedDigits);
-            long days = parsedDigits - CALENDAR_BASIS;
-            Console.Out.WriteLine("Days " + days);
-            DateTime dateInCommonFormat = BASE_DATE.AddDays(days - 1);
-
-            return dateInCommonFormat.ToString(DATE_PATTERN);
+            Console.Out.WriteLine("Parsed " + digits);
+            return long.Parse(digits);
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CalendarCalculator
@@ -23,6 +24,7 @@ namespace CalendarCalculator
         private NotifyIcon trayIcon;
         private MenuItem autostartOption;
         private MenuItem minimizedOption;
+        private bool trayIconClicked;
         public Form1()
         {
             InitializeForm();
@@ -163,8 +165,9 @@ namespace CalendarCalculator
                     new MenuItem(RM.GetString("exit", ci), Exit_Click)
                 }),
                 Visible = true,
-                Text = tutToday,
+                Text = GetTrayTooltipText(tutToday),
             };
+            trayIcon.MouseClick += ShowTrayInfo_Click;
             trayIcon.MouseDoubleClick += ShowForm_Click;
 
             eosforcomToolStripMenuItem.MouseMove += LinkMouseMove;
@@ -173,8 +176,30 @@ namespace CalendarCalculator
 
         private void ShowForm_Click(object sender, EventArgs e)
         {
+            trayIconClicked = false;
             this.Show();
             this.WindowState = FormWindowState.Normal;
+        }
+
+        private async void ShowTrayInfo_Click(object sender, EventArgs e)
+        {
+            int x = MousePosition.X;
+            int y = MousePosition.Y;
+
+            // Workaround to distinguish Click and Doubleclick on TrayIcon
+            if (trayIconClicked) return;
+            trayIconClicked = true;
+            await Task.Delay(SystemInformation.DoubleClickTime);
+            if (!trayIconClicked) return;
+            trayIconClicked = false;
+
+            TrayInfoForm trayInfo = new TrayInfoForm();
+            trayInfo.Show();
+            trayInfo.StartPosition = FormStartPosition.Manual;
+            trayInfo.SetDesktopLocation(x - trayInfo.Width / 2, y - trayInfo.Height - 25);
+            trayInfo.Show();
+            trayInfo.Activate();
+            trayInfo.TopMost = true;
         }
 
         void Exit_Click(object sender, EventArgs e)
@@ -228,7 +253,7 @@ namespace CalendarCalculator
             }
         }
 
-        private void eosforcomToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EosforcomToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("http://www.eosfor.com");
         }
@@ -250,6 +275,13 @@ namespace CalendarCalculator
         {
             Settings.Default["Language"] = language;
             Settings.Default.Save();
+        }
+
+        private string GetTrayTooltipText(string tutToday)
+        {
+            CultureInfo ci = CultureInfo.GetCultureInfo(GetAppLanguage());
+            string days = $"{RM.GetString("day", ci)} {converterService.GetNumberOfDays(tutToday)}";
+            return $"{tutToday}{Environment.NewLine}{Environment.NewLine}{days}";
         }
 
         private void InitLabels()

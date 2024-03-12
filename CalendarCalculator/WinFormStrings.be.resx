@@ -123,6 +123,9 @@
   <data name="converter" xml:space="preserve">
     <value>Канвертар</value>
   </data>
+  <data name="day" xml:space="preserve">
+    <value>Дзень</value>
+  </data>
   <data name="exit" xml:space="preserve">
     <value>Выхад</value>
   </data>
@@ -143,15 +146,6 @@
   </data>
   <data name="language" xml:space="preserve">
     <value>Мова</value>
-  </data>
-  <data name="lang_by" xml:space="preserve">
-    <value>Беларуская</value>
-  </data>
-  <data name="lang_en" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="lang_ru" xml:space="preserve">
-    <value>Русский</value>
   </data>
   <data name="minimized" xml:space="preserve">
     <value>Запускаць згорнутым</value>

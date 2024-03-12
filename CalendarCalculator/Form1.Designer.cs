@@ -238,7 +238,7 @@ namespace CalendarCalculator
             resources.ApplyResources(this.eosforcomToolStripMenuItem, "eosforcomToolStripMenuItem");
             this.eosforcomToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.eosforcomToolStripMenuItem.Name = "eosforcomToolStripMenuItem";
-            this.eosforcomToolStripMenuItem.Click += new System.EventHandler(this.eosforcomToolStripMenuItem_Click);
+            this.eosforcomToolStripMenuItem.Click += new System.EventHandler(this.EosforcomToolStripMenuItem_Click);
             // 
             // Form1
             // 
