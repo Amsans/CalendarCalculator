@@ -34,29 +34,29 @@ namespace CalendarCalculator
             if (matcher != null)
             {
                 int chiliadDigit = Int32.Parse(matcher.Groups[1].Value);
-                int gekatontadaDigit = Int32.Parse(matcher.Groups[2].Value);
-                int decadaDigit = Int32.Parse(matcher.Groups[3].Value);
-                int dayOfDecadaDigit = Int32.Parse(matcher.Groups[4].Value);
+                int hecatontadeDigit = Int32.Parse(matcher.Groups[2].Value);
+                int decadeDigit = Int32.Parse(matcher.Groups[3].Value);
+                int dayOfDecadeDigit = Int32.Parse(matcher.Groups[4].Value);
 
                 // Going backwards from the last digit to the first
-                String dayOfDecada = RomanNumber.ToRoman(dayOfDecadaDigit);
-                if (dayOfDecadaDigit == 0)
+                String dayOfDecade = RomanNumber.ToRoman(dayOfDecadeDigit);
+                if (dayOfDecadeDigit == 0)
                 {
-                    decadaDigit -= 1;
+                    decadeDigit -= 1;
                 }
-                String decada = RomanNumber.ToRoman(decadaDigit);
-                if (decadaDigit <= 0)
+                String decade = RomanNumber.ToRoman(decadeDigit);
+                if (decadeDigit <= 0)
                 {
-                    gekatontadaDigit -= 1;
+                    hecatontadeDigit -= 1;
                 }
-                String gekatontada = RomanNumber.ToRoman(gekatontadaDigit);
-                if (gekatontadaDigit <= 0)
+                String hecatontade = RomanNumber.ToRoman(hecatontadeDigit);
+                if (hecatontadeDigit <= 0)
                 {
                     chiliadDigit -= 1;
                 }
                 String chiliad = RomanNumber.ToRoman(chiliadDigit);
 
-                return String.Format("{0}.{1}.{2}.{3}", chiliad, gekatontada, decada, dayOfDecada);
+                return String.Format("{0}.{1}.{2}.{3}", chiliad, hecatontade, decade, dayOfDecade);
             }
             return "";
         }
@@ -85,30 +85,30 @@ namespace CalendarCalculator
             {
 
                 string chiliadDigit = matcher.Groups[1].ToString();
-                string gekatontadaDigit = matcher.Groups[2].ToString();
-                string decadaDigit = matcher.Groups[3].ToString();
-                string dayOfDecadaDigit = matcher.Groups[4].ToString();
+                string hecatontadeDigit = matcher.Groups[2].ToString();
+                string decadeDigit = matcher.Groups[3].ToString();
+                string dayOfDecadeDigit = matcher.Groups[4].ToString();
                 int chiliad = RomanNumber.ToArabic(chiliadDigit);
-                int gekatontada = RomanNumber.ToArabic(gekatontadaDigit);
-                int decada = RomanNumber.ToArabic(decadaDigit);
-                int dayOfDecada = RomanNumber.ToArabic(dayOfDecadaDigit);
-                if (dayOfDecada == 10)
+                int hecatontade = RomanNumber.ToArabic(hecatontadeDigit);
+                int decade = RomanNumber.ToArabic(decadeDigit);
+                int dayOfDecade = RomanNumber.ToArabic(dayOfDecadeDigit);
+                if (dayOfDecade == 10)
                 {
-                    dayOfDecada = 0;
-                    decada += 1;
+                    dayOfDecade = 0;
+                    decade += 1;
                 }
-                if (decada >= 10)
+                if (decade >= 10)
                 {
-                    decada %= 10;
-                    gekatontada += 1;
+                    decade %= 10;
+                    hecatontade += 1;
                 }
-                if (gekatontada >= 10)
+                if (hecatontade >= 10)
                 {
-                    gekatontada %= 10;
+                    hecatontade %= 10;
                     chiliad += 1;
                 }
 
-                digits = String.Format("{0}{1}{2}{3}", chiliad, gekatontada, decada, dayOfDecada);
+                digits = String.Format("{0}{1}{2}{3}", chiliad, hecatontade, decade, dayOfDecade);
             }
             Console.Out.WriteLine("Parsed " + digits);
             return long.Parse(digits);

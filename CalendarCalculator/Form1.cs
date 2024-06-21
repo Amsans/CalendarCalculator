@@ -87,13 +87,13 @@ namespace CalendarCalculator
             else
             {
                 string chiliadDigit = matcher.Groups[1].ToString();
-                string gekatontadaDigit = matcher.Groups[2].ToString();
-                string decadaDigit = matcher.Groups[3].ToString();
-                string dayOfDecadaDigit = matcher.Groups[4].ToString();
+                string hecatontadeDigit = matcher.Groups[2].ToString();
+                string decadeDigit = matcher.Groups[3].ToString();
+                string dayOfDecadeDigit = matcher.Groups[4].ToString();
                 if (String.IsNullOrWhiteSpace(chiliadDigit)
-                    || String.IsNullOrWhiteSpace(gekatontadaDigit)
-                    || String.IsNullOrWhiteSpace(decadaDigit)
-                    || String.IsNullOrWhiteSpace(dayOfDecadaDigit))
+                    || String.IsNullOrWhiteSpace(hecatontadeDigit)
+                    || String.IsNullOrWhiteSpace(decadeDigit)
+                    || String.IsNullOrWhiteSpace(dayOfDecadeDigit))
                 {
                     return false;
                 }
@@ -103,14 +103,14 @@ namespace CalendarCalculator
 
         private void chiliadDatePicker_ValueChanged(object sender, EventArgs e)
         {
-            CalculateHeliads();
+            CalculateChiliads();
         }
 
         private void chiliadUpDown_ValueChanged(object sender, EventArgs e)
         {
-            CalculateHeliads();
+            CalculateChiliads();
         }
-        private void CalculateHeliads()
+        private void CalculateChiliads()
         {
             DateTime date = chiliadDatePicker.Value;
             int chiliads = (int)chiliadUpDown.Value;
