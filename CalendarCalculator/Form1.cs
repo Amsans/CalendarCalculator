@@ -36,7 +36,7 @@ namespace CalendarCalculator
 
             DateTime today = DateTime.Now;
             DatePicker.Value = today;
-            HeliadaDatePicker.Value = today;
+            chiliadDatePicker.Value = today;
             string tutToday = converterService.ConvertToTUT(today);
             tutFormatLabel.Text = tutToday;
 
@@ -86,11 +86,11 @@ namespace CalendarCalculator
             }
             else
             {
-                string heliadaDigit = matcher.Groups[1].ToString();
+                string chiliadDigit = matcher.Groups[1].ToString();
                 string gekatontadaDigit = matcher.Groups[2].ToString();
                 string decadaDigit = matcher.Groups[3].ToString();
                 string dayOfDecadaDigit = matcher.Groups[4].ToString();
-                if (String.IsNullOrWhiteSpace(heliadaDigit)
+                if (String.IsNullOrWhiteSpace(chiliadDigit)
                     || String.IsNullOrWhiteSpace(gekatontadaDigit)
                     || String.IsNullOrWhiteSpace(decadaDigit)
                     || String.IsNullOrWhiteSpace(dayOfDecadaDigit))
@@ -101,22 +101,22 @@ namespace CalendarCalculator
             }
         }
 
-        private void HeliadaDatePicker_ValueChanged(object sender, EventArgs e)
+        private void chiliadDatePicker_ValueChanged(object sender, EventArgs e)
         {
             CalculateHeliads();
         }
 
-        private void HeliadaUpDown_ValueChanged(object sender, EventArgs e)
+        private void chiliadUpDown_ValueChanged(object sender, EventArgs e)
         {
             CalculateHeliads();
         }
         private void CalculateHeliads()
         {
-            DateTime date = HeliadaDatePicker.Value;
-            int heliadas = (int)heliadaUpDown.Value;
-            DateTime resultDate = date.AddDays(1000 * heliadas);
-            heliadsInCommon.Text = resultDate.ToString(DateConverterService.DATE_PATTERN);
-            heliadsInTut.Text = converterService.ConvertToTUT(resultDate);
+            DateTime date = chiliadDatePicker.Value;
+            int chiliads = (int)chiliadUpDown.Value;
+            DateTime resultDate = date.AddDays(1000 * chiliads);
+            chiliadsInCommon.Text = resultDate.ToString(DateConverterService.DATE_PATTERN);
+            chiliadsInTut.Text = converterService.ConvertToTUT(resultDate);
         }
 
 
@@ -297,8 +297,8 @@ namespace CalendarCalculator
             helpStripMenuItem.Text = RM.GetString("help", ci);
             tutInputValidation.Text = RM.GetString("invalid_format", ci);
             tabControl.TabPages[0].Text = RM.GetString("converter", ci);
-            tabControl.TabPages[1].Text = RM.GetString("heliadas", ci);
-            heliadaLabel.Text = RM.GetString("heliada_tab_info", ci);
+            tabControl.TabPages[1].Text = RM.GetString("chiliads", ci);
+            chiliadLabel.Text = RM.GetString("chiliad_tab_info", ci);
             ToolTip tooltip = new ToolTip
             {
                 IsBalloon = false,
@@ -307,8 +307,8 @@ namespace CalendarCalculator
             tooltip.SetToolTip(tutInputValidation, RM.GetString("tooltip_tut_input", ci));
             tooltip.SetToolTip(tutFormatLabel, RM.GetString("tooltip_tut_label", ci));
             tooltip.SetToolTip(commonFormatLabel, RM.GetString("tooltip_tut_label", ci));
-            tooltip.SetToolTip(heliadsInCommon, RM.GetString("tooltip_tut_label", ci));
-            tooltip.SetToolTip(heliadsInTut, RM.GetString("tooltip_tut_label", ci));
+            tooltip.SetToolTip(chiliadsInCommon, RM.GetString("tooltip_tut_label", ci));
+            tooltip.SetToolTip(chiliadsInTut, RM.GetString("tooltip_tut_label", ci));
         }
 
         private void InitializeLanguageMenu()

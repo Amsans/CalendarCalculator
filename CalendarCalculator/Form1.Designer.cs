@@ -42,26 +42,26 @@ namespace CalendarCalculator
             this.tutInputValidation = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.converterTab = new System.Windows.Forms.TabPage();
-            this.heliadaTab = new System.Windows.Forms.TabPage();
-            this.heliadaLabel = new System.Windows.Forms.Label();
-            this.heliadsInTut = new System.Windows.Forms.Label();
-            this.heliadsInCommon = new System.Windows.Forms.Label();
+            this.chiliadTab = new System.Windows.Forms.TabPage();
+            this.chiliadLabel = new System.Windows.Forms.Label();
+            this.chiliadsInTut = new System.Windows.Forms.Label();
+            this.chiliadsInCommon = new System.Windows.Forms.Label();
             this.plusLabel = new System.Windows.Forms.Label();
-            this.heliadaUpDown = new System.Windows.Forms.NumericUpDown();
-            this.HeliadaDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.chiliadUpDown = new System.Windows.Forms.NumericUpDown();
+            this.chiliadDatePicker = new System.Windows.Forms.DateTimePicker();
             this.formTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.propertiesStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autostartStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minimizedStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.languageStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eosforcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
             this.converterTab.SuspendLayout();
-            this.heliadaTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.heliadaUpDown)).BeginInit();
+            this.chiliadTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chiliadUpDown)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,7 +105,7 @@ namespace CalendarCalculator
             // tabControl
             // 
             this.tabControl.Controls.Add(this.converterTab);
-            this.tabControl.Controls.Add(this.heliadaTab);
+            this.tabControl.Controls.Add(this.chiliadTab);
             resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -121,66 +121,66 @@ namespace CalendarCalculator
             resources.ApplyResources(this.converterTab, "converterTab");
             this.converterTab.Name = "converterTab";
             // 
-            // heliadaTab
+            // chiliadTab
             // 
-            this.heliadaTab.Controls.Add(this.heliadaLabel);
-            this.heliadaTab.Controls.Add(this.heliadsInTut);
-            this.heliadaTab.Controls.Add(this.heliadsInCommon);
-            this.heliadaTab.Controls.Add(this.plusLabel);
-            this.heliadaTab.Controls.Add(this.heliadaUpDown);
-            this.heliadaTab.Controls.Add(this.HeliadaDatePicker);
-            resources.ApplyResources(this.heliadaTab, "heliadaTab");
-            this.heliadaTab.Name = "heliadaTab";
+            this.chiliadTab.Controls.Add(this.chiliadLabel);
+            this.chiliadTab.Controls.Add(this.chiliadsInTut);
+            this.chiliadTab.Controls.Add(this.chiliadsInCommon);
+            this.chiliadTab.Controls.Add(this.plusLabel);
+            this.chiliadTab.Controls.Add(this.chiliadUpDown);
+            this.chiliadTab.Controls.Add(this.chiliadDatePicker);
+            resources.ApplyResources(this.chiliadTab, "chiliadTab");
+            this.chiliadTab.Name = "chiliadTab";
             // 
-            // heliadaLabel
+            // chiliadLabel
             // 
-            resources.ApplyResources(this.heliadaLabel, "heliadaLabel");
-            this.heliadaLabel.Name = "heliadaLabel";
+            resources.ApplyResources(this.chiliadLabel, "chiliadLabel");
+            this.chiliadLabel.Name = "chiliadLabel";
             // 
-            // heliadsInTut
+            // chiliadsInTut
             // 
-            resources.ApplyResources(this.heliadsInTut, "heliadsInTut");
-            this.heliadsInTut.Name = "heliadsInTut";
+            resources.ApplyResources(this.chiliadsInTut, "chiliadsInTut");
+            this.chiliadsInTut.Name = "chiliadsInTut";
             // 
-            // heliadsInCommon
+            // chiliadsInCommon
             // 
-            resources.ApplyResources(this.heliadsInCommon, "heliadsInCommon");
-            this.heliadsInCommon.Name = "heliadsInCommon";
+            resources.ApplyResources(this.chiliadsInCommon, "chiliadsInCommon");
+            this.chiliadsInCommon.Name = "chiliadsInCommon";
             // 
             // plusLabel
             // 
             resources.ApplyResources(this.plusLabel, "plusLabel");
             this.plusLabel.Name = "plusLabel";
             // 
-            // heliadaUpDown
+            // chiliadUpDown
             // 
-            resources.ApplyResources(this.heliadaUpDown, "heliadaUpDown");
-            this.heliadaUpDown.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.chiliadUpDown, "chiliadUpDown");
+            this.chiliadUpDown.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
-            this.heliadaUpDown.Minimum = new decimal(new int[] {
+            this.chiliadUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.heliadaUpDown.Name = "heliadaUpDown";
-            this.heliadaUpDown.Value = new decimal(new int[] {
+            this.chiliadUpDown.Name = "chiliadUpDown";
+            this.chiliadUpDown.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.heliadaUpDown.ValueChanged += new System.EventHandler(this.HeliadaUpDown_ValueChanged);
+            this.chiliadUpDown.ValueChanged += new System.EventHandler(this.chiliadUpDown_ValueChanged);
             // 
-            // HeliadaDatePicker
+            // chiliadDatePicker
             // 
-            this.HeliadaDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            resources.ApplyResources(this.HeliadaDatePicker, "HeliadaDatePicker");
-            this.HeliadaDatePicker.MinDate = new System.DateTime(1996, 3, 1, 0, 0, 0, 0);
-            this.HeliadaDatePicker.Name = "HeliadaDatePicker";
-            this.HeliadaDatePicker.Value = new System.DateTime(2029, 12, 25, 23, 59, 59, 0);
-            this.HeliadaDatePicker.ValueChanged += new System.EventHandler(this.HeliadaDatePicker_ValueChanged);
+            this.chiliadDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            resources.ApplyResources(this.chiliadDatePicker, "chiliadDatePicker");
+            this.chiliadDatePicker.MinDate = new System.DateTime(1996, 3, 1, 0, 0, 0, 0);
+            this.chiliadDatePicker.Name = "chiliadDatePicker";
+            this.chiliadDatePicker.Value = new System.DateTime(2029, 12, 25, 23, 59, 59, 0);
+            this.chiliadDatePicker.ValueChanged += new System.EventHandler(this.chiliadDatePicker_ValueChanged);
             // 
             // formTooltip
             // 
@@ -206,6 +206,11 @@ namespace CalendarCalculator
             this.propertiesStripMenuItem.Name = "propertiesStripMenuItem";
             resources.ApplyResources(this.propertiesStripMenuItem, "propertiesStripMenuItem");
             // 
+            // languageStripMenuItem
+            // 
+            this.languageStripMenuItem.Name = "languageStripMenuItem";
+            resources.ApplyResources(this.languageStripMenuItem, "languageStripMenuItem");
+            // 
             // autostartStripMenuItem
             // 
             resources.ApplyResources(this.autostartStripMenuItem, "autostartStripMenuItem");
@@ -215,11 +220,6 @@ namespace CalendarCalculator
             // 
             resources.ApplyResources(this.minimizedStripMenuItem, "minimizedStripMenuItem");
             this.minimizedStripMenuItem.Name = "minimizedStripMenuItem";
-            // 
-            // languageStripMenuItem
-            // 
-            this.languageStripMenuItem.Name = "languageStripMenuItem";
-            resources.ApplyResources(this.languageStripMenuItem, "languageStripMenuItem");
             // 
             // exitStripMenuItem
             // 
@@ -256,9 +256,9 @@ namespace CalendarCalculator
             this.tabControl.ResumeLayout(false);
             this.converterTab.ResumeLayout(false);
             this.converterTab.PerformLayout();
-            this.heliadaTab.ResumeLayout(false);
-            this.heliadaTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.heliadaUpDown)).EndInit();
+            this.chiliadTab.ResumeLayout(false);
+            this.chiliadTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chiliadUpDown)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -276,14 +276,14 @@ namespace CalendarCalculator
         private System.Windows.Forms.Label tutInputValidation;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage converterTab;
-        private System.Windows.Forms.TabPage heliadaTab;
-        private System.Windows.Forms.Label heliadsInTut;
-        private System.Windows.Forms.Label heliadsInCommon;
+        private System.Windows.Forms.TabPage chiliadTab;
+        private System.Windows.Forms.Label chiliadsInTut;
+        private System.Windows.Forms.Label chiliadsInCommon;
         private System.Windows.Forms.Label plusLabel;
-        private System.Windows.Forms.NumericUpDown heliadaUpDown;
-        private System.Windows.Forms.DateTimePicker HeliadaDatePicker;
+        private System.Windows.Forms.NumericUpDown chiliadUpDown;
+        private System.Windows.Forms.DateTimePicker chiliadDatePicker;
         private System.Windows.Forms.ToolTip formTooltip;
-        private System.Windows.Forms.Label heliadaLabel;
+        private System.Windows.Forms.Label chiliadLabel;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem propertiesStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autostartStripMenuItem;

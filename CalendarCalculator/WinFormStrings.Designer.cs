@@ -106,20 +106,20 @@ namespace CalendarCalculator {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подсчёт N-ой хелиады (1000 дней) для указанной даты.
+        ///   Looks up a localized string similar to Подсчёт N-ой хилиады (1000 дней) для указанной даты.
         /// </summary>
-        internal static string heliada_tab_info {
+        internal static string chiliad_tab_info {
             get {
-                return ResourceManager.GetString("heliada_tab_info", resourceCulture);
+                return ResourceManager.GetString("chiliad_tab_info", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Хелиады.
+        ///   Looks up a localized string similar to Хилиады.
         /// </summary>
-        internal static string heliadas {
+        internal static string chiliads {
             get {
-                return ResourceManager.GetString("heliadas", resourceCulture);
+                return ResourceManager.GetString("chiliads", resourceCulture);
             }
         }
         

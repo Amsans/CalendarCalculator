@@ -132,11 +132,11 @@
   <data name="form_title" xml:space="preserve">
     <value>TUT date converter</value>
   </data>
-  <data name="heliadas" xml:space="preserve">
-    <value>Heliadas</value>
+  <data name="chiliads" xml:space="preserve">
+    <value>Chiliads</value>
   </data>
-  <data name="heliada_tab_info" xml:space="preserve">
-    <value>Nth heliada calculation (1000 days) for the date specified</value>
+  <data name="chiliad_tab_info" xml:space="preserve">
+    <value>Nth chiliad calculation (1000 days) for the date specified</value>
   </data>
   <data name="help" xml:space="preserve">
     <value>Help</value>

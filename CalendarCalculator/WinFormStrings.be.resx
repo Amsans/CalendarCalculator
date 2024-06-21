@@ -132,11 +132,11 @@
   <data name="form_title" xml:space="preserve">
     <value>Канвертар дат ВАХ</value>
   </data>
-  <data name="heliadas" xml:space="preserve">
-    <value>Хеліяды</value>
+  <data name="chiliads" xml:space="preserve">
+    <value>Хіліяды</value>
   </data>
-  <data name="heliada_tab_info" xml:space="preserve">
-    <value>Падлік N-ай хеліяды (1000 дзён) для пазначанай даты</value>
+  <data name="chiliad_tab_info" xml:space="preserve">
+    <value>Падлік N-ай хіліяды (1000 дзён) для пазначанай даты</value>
   </data>
   <data name="help" xml:space="preserve">
     <value>Дапамога</value>

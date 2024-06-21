@@ -33,7 +33,7 @@ namespace CalendarCalculator
             Match matcher = regex.Match(days);
             if (matcher != null)
             {
-                int heliadaDigit = Int32.Parse(matcher.Groups[1].Value);
+                int chiliadDigit = Int32.Parse(matcher.Groups[1].Value);
                 int gekatontadaDigit = Int32.Parse(matcher.Groups[2].Value);
                 int decadaDigit = Int32.Parse(matcher.Groups[3].Value);
                 int dayOfDecadaDigit = Int32.Parse(matcher.Groups[4].Value);
@@ -52,11 +52,11 @@ namespace CalendarCalculator
                 String gekatontada = RomanNumber.ToRoman(gekatontadaDigit);
                 if (gekatontadaDigit <= 0)
                 {
-                    heliadaDigit -= 1;
+                    chiliadDigit -= 1;
                 }
-                String heliada = RomanNumber.ToRoman(heliadaDigit);
+                String chiliad = RomanNumber.ToRoman(chiliadDigit);
 
-                return String.Format("{0}.{1}.{2}.{3}", heliada, gekatontada, decada, dayOfDecada);
+                return String.Format("{0}.{1}.{2}.{3}", chiliad, gekatontada, decada, dayOfDecada);
             }
             return "";
         }
@@ -84,11 +84,11 @@ namespace CalendarCalculator
             if (matcher != null)
             {
 
-                string heliadaDigit = matcher.Groups[1].ToString();
+                string chiliadDigit = matcher.Groups[1].ToString();
                 string gekatontadaDigit = matcher.Groups[2].ToString();
                 string decadaDigit = matcher.Groups[3].ToString();
                 string dayOfDecadaDigit = matcher.Groups[4].ToString();
-                int heliada = RomanNumber.ToArabic(heliadaDigit);
+                int chiliad = RomanNumber.ToArabic(chiliadDigit);
                 int gekatontada = RomanNumber.ToArabic(gekatontadaDigit);
                 int decada = RomanNumber.ToArabic(decadaDigit);
                 int dayOfDecada = RomanNumber.ToArabic(dayOfDecadaDigit);
@@ -105,10 +105,10 @@ namespace CalendarCalculator
                 if (gekatontada >= 10)
                 {
                     gekatontada %= 10;
-                    heliada += 1;
+                    chiliad += 1;
                 }
 
-                digits = String.Format("{0}{1}{2}{3}", heliada, gekatontada, decada, dayOfDecada);
+                digits = String.Format("{0}{1}{2}{3}", chiliad, gekatontada, decada, dayOfDecada);
             }
             Console.Out.WriteLine("Parsed " + digits);
             return long.Parse(digits);

@@ -132,11 +132,11 @@
   <data name="form_title" xml:space="preserve">
     <value>Конвертер дат УЕХ</value>
   </data>
-  <data name="heliadas" xml:space="preserve">
-    <value>Хелиады</value>
+  <data name="chiliads" xml:space="preserve">
+    <value>Хилиады</value>
   </data>
-  <data name="heliada_tab_info" xml:space="preserve">
-    <value>Подсчёт N-ой хелиады (1000 дней) для указанной даты</value>
+  <data name="chiliad_tab_info" xml:space="preserve">
+    <value>Подсчёт N-ой хилиады (1000 дней) для указанной даты</value>
   </data>
   <data name="help" xml:space="preserve">
     <value>Помощь</value>
